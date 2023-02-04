@@ -1,0 +1,20 @@
+**/node_modules/*
+dist
+# don't lint nyc coverage output
+coverage
+**/.next/*
+*.png
+*.gif
+*.svg
+*.xml
+*.ico
+*.txt
+*.webmanifest
+*.lock
+*.jpg
+*.jpeg
+*.mjs
+*.scss
+*.md
+**/out/*
+next-env.d.ts
