@@ -1,4 +1,15 @@
+# general
 node_modules
-.next
 yarn.lock
 public
+
+# ignore build caches
+**/.next/**
+
+# output directories
+/dist
+/coverage
+
+# ignore minified files
+*.min.css
+*.min.js

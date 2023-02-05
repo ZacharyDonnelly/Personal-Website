@@ -1,4 +1,4 @@
-{
+module.exports = {
     "singleQuote": true,
     "jsxSingleQuote": false,
     "jsxBracketSameLine": true,
@@ -11,6 +11,7 @@
     "trailingComma": "none",
     "proseWrap": "never",
     "quoteProps": "consistent",
+    "plugins": [require.resolve("prettier-plugin-organize-imports")],
     "overrides": [
         {
             "files": ["package.json", "*.md"],

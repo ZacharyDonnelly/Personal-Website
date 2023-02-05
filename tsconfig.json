@@ -4,8 +4,10 @@
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
         "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
         "noEmit": true,
         "esModuleInterop": true,
         "module": "esnext",
@@ -14,14 +16,29 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "incremental": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "baseUrl": ".",
         "paths": {
             "@/components/*": ["src/components/*"],
             "@/pages/*": ["src/pages/*"],
             "@/lib/*": ["src/lib/*"],
             "@/styles/*": ["src/styles/*"]
-        }
+        },
+        "typeRoots": ["./node_modules/@types", "**/types"]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules", ".next"]
+    "include": [
+        "next-env.d.ts",
+        "next.config.js",
+        "src/**/*.module.scss",
+        "src/**/*.scss",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": ["node_modules", ".next", "dist"],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "commonjs"
+        }
+    }
 }
