@@ -1,16 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
 
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
-  swcMinify: true,
-  pageExtensions: ['ts', 'tsx'],
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-  },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+    reactStrictMode: true,
+    swcMinify: true,
+    pageExtensions: ['ts', 'tsx'],
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')]
+    },
+    i18n: {
+        locales: ['en'],
+        defaultLocale: 'en'
+    }
 }
