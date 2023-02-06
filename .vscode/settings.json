@@ -1,19 +1,18 @@
 {
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "emmet.includeLanguages": {
-    "postcss": "scss"
-  },
-  "emmet.syntaxProfiles": {
-    "postcss": "scss"
-  },
-  "files.associations": {
-    "*.scss": "postcss"
-  }
+    "files.insertFinalNewline": false,
+    "files.trimTrailingWhitespace": true,
+    "typescript.tsdk": "../node_modules/typescript/lib",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "emmet.includeLanguages": {
+        "postcss": "scss"
+    },
+    "emmet.syntaxProfiles": {
+        "postcss": "scss"
+    },
+    "files.associations": {
+        "*.scss": "postcss"
+    }
 }
