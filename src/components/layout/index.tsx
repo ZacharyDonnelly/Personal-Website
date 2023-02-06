@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Nav from './navbar'
+import Header from './header'
 
 interface LayoutProps {
     children: JSX.Element
@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => (
     <>
-        <Nav />
+        <Header />
         {children}
     </>
 )

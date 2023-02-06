@@ -1,0 +1,116 @@
+.header {
+    display: block;
+    position: relative;
+
+    .navContainer {
+        width: 100%;
+        z-index: 100;
+        padding: 1.5rem 6rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+
+        > nav {
+            pointer-events: all;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logoContainer {
+            height: 4rem;
+            width: 5rem;
+        }
+
+        .linkContainer {
+            ul {
+                display: inherit;
+
+                > li {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                    border-radius: 1rem;
+                    transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                    will-change: transform;
+
+                    a {
+                        padding: 1rem 1.5rem;
+                        transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                    }
+
+                    &:hover {
+                        transform: translate(0px, 0.2rem);
+                        background-color: lighten(lightgray, 15%);
+                    }
+                }
+            }
+
+            .hamburger {
+                height: 3.5rem;
+                padding: 1.125rem 1.25rem;
+                margin-top: 0.225rem;
+                display: flex;
+                align-items: stretch;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 1.125rem;
+                transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                cursor: pointer;
+                verticle-align: middle;
+                background-color: transparent;
+                outline: none;
+                border: none;
+
+                &.open {
+                    background-color: lighten(lightgray, 15%);
+                }
+
+                &:hover {
+                    transform: translate(0px, 0.2rem);
+                }
+
+                .lineTop,
+                .lineBottom {
+                    will-change: transform;
+                    width: 1.75rem;
+                    height: 0.125rem;
+                    background-color: rgb(58, 70, 96);
+                    border-radius: 0.875rem;
+                    transition: 0.2s ease-in-out;
+                }
+
+                .lineTop {
+                    margin-bottom: 0.25rem;
+
+                    &.activeTop {
+                        transform: translate3d(0px, 0.31rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+                            rotateZ(45deg) skew(0deg, 0deg);
+                        transform-style: preserve-3d;
+                    }
+                }
+
+                .lineBottom {
+                    margin-top: 0.25rem;
+
+                    &.activeBottom {
+                        transform: translate3d(0px, -0.315rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+                            rotateZ(-45deg) skew(0deg, 0deg);
+                        transform-style: preserve-3d;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .navContainer {
+        max-width: 80%;
+    }
+}
