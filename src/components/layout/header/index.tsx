@@ -16,7 +16,7 @@ const Header: FC = () => {
             <div className={styles.navContainer}>
                 <nav className={styles.logoContainer}>
                     <Link href="/" aria-label="Zach Donnelly" target="_blank" role="link">
-                        <Image src="/logo.png" height={82} width={95} alt="Zach Donnelly" />
+                        <Image src="/assets/icons/logo_brush.png" height={82} width={95} alt="Zach Donnelly" />
                     </Link>
                 </nav>
                 <nav className={styles.linkContainer}>

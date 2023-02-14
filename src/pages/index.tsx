@@ -7,7 +7,7 @@ export default function Home() {
                 <title>Zachary Donnelly</title>
                 <meta name="description" content="Zachary Donnelly Senior Software Engineer" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/assets/icons/favicon.ico" />
             </Head>
         </>
     )
