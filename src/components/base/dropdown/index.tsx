@@ -10,7 +10,7 @@ interface DropdownProps {
     className: string
     active: boolean
 }
-
+// Dropdown container animation properties
 const container = {
     hidden: { x: 0, y: 0 },
     show: {
@@ -26,7 +26,7 @@ const container = {
         }
     }
 }
-
+// Dropdown items animation properties
 const listItem = {
     hidden: { opacity: 0 },
     show: { opacity: 1 }

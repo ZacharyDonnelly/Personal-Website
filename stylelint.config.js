@@ -10,7 +10,6 @@ module.exports = {
         'no-duplicate-at-import-rules': true,
         'no-duplicate-selectors': true,
         'selector-max-universal': 0,
-        'max-nesting-depth': 4,
         'at-rule-empty-line-before': [
             'always',
             {
@@ -39,7 +38,7 @@ module.exports = {
         'function-no-unknown': true,
         'font-family-no-duplicate-names': true,
         'font-family-no-missing-generic-family-keyword': true,
-        'unit-allowed-list': ['rem', 'vh', 'vw', '%', 'px', 's'],
+        'unit-allowed-list': ['rem', 'vh', 'vw', '%', 'px', 's', 'ms', 'deg'],
         'no-empty-source': null,
         'no-extra-semicolons': true,
         'no-invalid-double-slash-comments': true,

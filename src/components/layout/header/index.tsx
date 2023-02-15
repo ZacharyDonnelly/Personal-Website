@@ -3,11 +3,11 @@ import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, ReactNode, useCallback, useState } from 'react'
+import { FC, useCallback, useState } from 'react'
 import styles from './index.module.scss'
 
 export interface MenuItemProps {
-    title: string | ReactNode
+    title: string
     path: string
 }
 
@@ -56,21 +56,13 @@ const Header: FC = () => {
                     <nav className={styles.linkContainer}>
                         {!isMobile && !isMenuOpen && (
                             <ul>
-                                <li>
-                                    <Link href="/about" aria-label="About Zach Donnelly" role="link">
-                                        About
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/portfolio" aria-label="Zach Donnelly's Portfolio" role="link">
-                                        Portfolio
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact" aria-label="Contact Zach Donnelly" role="link">
-                                        Contact
-                                    </Link>
-                                </li>
+                                {MenuItems.map((item, index) => (
+                                    <li key={index}>
+                                        <Link href={item.path} aria-label={`Zach Donnelly ${item.title}`} role="link">
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         )}
                         <button className={styles.hamburger} onClick={toggleMenu} aria-label="Menu">
