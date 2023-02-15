@@ -1,0 +1,11 @@
+// ------ COLORS ------
+$accent-color-hex: #ffaa66;
+$accent-color-rgb: rgb(255, 170, 102);
+
+$nav-hover-color: transparentize($accent-color-rgb, 0.75);
+
+// ------ TYPOGRAPHY ------
+$main-font-family: Yellowtail;
+
+// ------ BREAKPOINTS ------
+$mobile-lg: 768px;

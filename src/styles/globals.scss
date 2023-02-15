@@ -32,7 +32,15 @@ a {
     line-height: 1.75rem;
 }
 
-ul, ol {
+ul,
+ol {
     text-decoration: none;
     list-style-type: none;
+}
+
+@font-face {
+    font-family: 'Yellowtail';
+    src: url('../../public/assets/fonts/yellowtail-regular.ttf');
+    font-weight: 500;
+    font-style: cursive;
 }

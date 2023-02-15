@@ -1,3 +1,5 @@
+@import '@/styles/vars.scss';
+
 .header {
     display: block;
     position: relative;
@@ -5,7 +7,7 @@
     .navContainer {
         width: 100%;
         z-index: 100;
-        padding: 1.5rem 6rem;
+        padding: 0.5rem 6rem 1.5rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -16,16 +18,31 @@
         align-items: center;
         margin: 0 auto;
 
+        @media screen and (max-width: $mobile-lg) {
+            padding: 0 3rem 1rem;
+        }
+
         > nav {
             pointer-events: all;
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            color: $accent-color-rgb;
+
+            @media screen and (max-width: $mobile-lg) {
+                justify-content: space-between;
+            }
         }
 
         .logoContainer {
-            height: 4rem;
-            width: 5rem;
+            align-items: center;
+            height: 4.875rem;
+            width: 5.625rem;
+
+            a {
+                vertical-align: middle;
+                padding-top: 0.5rem;
+            }
         }
 
         .linkContainer {
@@ -33,11 +50,13 @@
                 display: inherit;
 
                 > li {
-                    font-size: 1.25rem;
-                    font-weight: 700;
+                    font-family: $main-font-family;
+                    font-weight: 500;
+                    font-size: 1.625rem;
                     border-radius: 1rem;
                     transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
                     will-change: transform;
+                    margin: 0 0.375rem;
 
                     a {
                         padding: 1rem 1.5rem;
@@ -45,8 +64,8 @@
                     }
 
                     &:hover {
-                        transform: translate(0px, 0.2rem);
-                        background-color: lighten(lightgray, 15%);
+                        transform: translate(0px, 0.1rem);
+                        background-color: $nav-hover-color;
                     }
                 }
             }
@@ -68,19 +87,20 @@
                 border: none;
 
                 &.open {
-                    background-color: lighten(lightgray, 15%);
+                    background-color: $nav-hover-color;
                 }
 
                 &:hover {
-                    transform: translate(0px, 0.2rem);
+                    transform: translate(0px, 0.1rem);
+                    background-color: $nav-hover-color;
                 }
 
                 .lineTop,
                 .lineBottom {
                     will-change: transform;
                     width: 1.75rem;
-                    height: 0.125rem;
-                    background-color: rgb(58, 70, 96);
+                    height: 0.25rem;
+                    background-color: $accent-color-rgb;
                     border-radius: 0.875rem;
                     transition: 0.2s ease-in-out;
                 }
@@ -99,7 +119,7 @@
                     margin-top: 0.25rem;
 
                     &.activeBottom {
-                        transform: translate3d(0px, -0.315rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+                        transform: translate3d(0px, -0.425rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
                             rotateZ(-45deg) skew(0deg, 0deg);
                         transform-style: preserve-3d;
                     }
