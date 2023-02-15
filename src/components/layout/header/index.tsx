@@ -4,8 +4,13 @@ import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, ReactElement, useCallback, useState } from 'react'
+import { Dispatch, ReactElement, SetStateAction } from 'react'
 import styles from './index.module.scss'
+
+interface HeaderProps {
+    isMenuOpen: boolean
+    setIsMenuOpen: Dispatch<SetStateAction<boolean>>
+}
 
 export interface MenuItemProps {
     title: string
@@ -27,13 +32,8 @@ const MenuItems: MenuItemProps[] = [
     }
 ]
 
-const Header: FC = (): ReactElement => {
+const Header = ({ isMenuOpen, setIsMenuOpen }: HeaderProps): ReactElement => {
     const isMobile = useIsMobile()
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-
-    const toggleMenu = useCallback<() => void>(() => {
-        setIsMenuOpen(!isMenuOpen)
-    }, [isMenuOpen])
 
     return (
         <>
@@ -43,7 +43,7 @@ const Header: FC = (): ReactElement => {
                         [styles.noBorder]: isMobile || isMenuOpen
                     })}
                 >
-                    <Dropdown items={MenuItems} active={isMenuOpen} className={styles.navDropdown} />
+                    <Dropdown items={MenuItems} setIsMenuOpen={setIsMenuOpen} className={styles.navDropdown} />
                     <nav className={styles.logoContainer}>
                         <Link href="/" aria-label={name} role="link">
                             {!isMenuOpen ? (
@@ -69,7 +69,7 @@ const Header: FC = (): ReactElement => {
                             className={cn(styles.hamburger, {
                                 [styles.open]: isMenuOpen
                             })}
-                            onClick={toggleMenu}
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Menu"
                         >
                             <div
