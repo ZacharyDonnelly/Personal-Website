@@ -1,8 +1,8 @@
 import { MenuItemProps } from '@/components/layout/header'
 import cn from 'classnames'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FC } from 'react'
+import { ReactElement } from 'react'
 import styles from './index.module.scss'
 
 interface DropdownProps {
@@ -10,6 +10,7 @@ interface DropdownProps {
     className: string
     active: boolean
 }
+
 // Dropdown container animation properties
 const container = {
     hidden: { x: 0, y: 0 },
@@ -26,33 +27,34 @@ const container = {
         }
     }
 }
+
 // Dropdown items animation properties
 const listItem = {
     hidden: { opacity: 0 },
-    show: { opacity: 1 }
+    show: {
+        opacity: 1,
+        transition: {
+            duration: 1,
+            ease: 'easeInOut'
+        }
+    }
 }
 
-const Dropdown: FC<DropdownProps> = ({ items, className, active }) => (
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-constraint
+const Dropdown = ({ items, className, active }: DropdownProps): ReactElement => (
     <>
         {active && (
-            <AnimatePresence>
-                <motion.div
-                    variants={container}
-                    animate="show"
-                    initial="hidden"
-                    className={cn(styles.dropdown, className)}
-                >
-                    <ul>
-                        {items.map((item: MenuItemProps, index: number) => (
-                            <motion.li variants={listItem} transition={{ duration: 1, ease: 'easeIn' }} key={index}>
-                                <Link href={item.path} aria-label={`Zach Donnelly ${item.title}`} role="link">
-                                    {item.title}
-                                </Link>
-                            </motion.li>
-                        ))}
-                    </ul>
-                </motion.div>
-            </AnimatePresence>
+            <motion.div variants={container} animate="show" initial="hidden" className={cn(styles.dropdown, className)}>
+                <ul>
+                    {items.map((item: MenuItemProps, index: number) => (
+                        <motion.li variants={listItem} key={index}>
+                            <Link href={item.path} aria-label={`Zach Donnelly ${item.title}`} role="link">
+                                {item.title}
+                            </Link>
+                        </motion.li>
+                    ))}
+                </ul>
+            </motion.div>
         )}
     </>
 )

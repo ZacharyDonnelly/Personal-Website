@@ -3,7 +3,7 @@ import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useCallback, useState } from 'react'
+import { FC, ReactElement, useCallback, useState } from 'react'
 import styles from './index.module.scss'
 
 export interface MenuItemProps {
@@ -26,7 +26,7 @@ const MenuItems: MenuItemProps[] = [
     }
 ]
 
-const Header: FC = () => {
+const Header: FC = (): ReactElement => {
     const isMobile = useIsMobile()
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
@@ -65,7 +65,13 @@ const Header: FC = () => {
                                 ))}
                             </ul>
                         )}
-                        <button className={styles.hamburger} onClick={toggleMenu} aria-label="Menu">
+                        <button
+                            className={cn(styles.hamburger, {
+                                [styles.open]: isMenuOpen
+                            })}
+                            onClick={toggleMenu}
+                            aria-label="Menu"
+                        >
                             <div
                                 className={cn(styles.lineTop, {
                                     [styles.activeTop]: isMenuOpen

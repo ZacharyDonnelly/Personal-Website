@@ -20,7 +20,7 @@
         margin: 0 auto;
 
         @media screen and (max-width: $mobile-lg) {
-            padding: 0 3rem 1rem;
+            padding: 0 2rem 1rem;
         }
 
         > nav {
@@ -85,6 +85,10 @@
                 &:hover {
                     transform: translate(0px, 0.1rem);
                     background-color: $nav-hover-color;
+                }
+
+                &.open {
+                    background-color: transparent;
                 }
 
                 .lineTop,

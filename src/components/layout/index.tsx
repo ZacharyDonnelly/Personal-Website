@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import { ReactElement } from 'react'
 import Header from './header'
 
 interface LayoutProps {
     children: JSX.Element
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => (
+const Layout = ({ children }: LayoutProps): ReactElement => (
     <>
         <Header />
         {children}
