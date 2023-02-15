@@ -1,4 +1,5 @@
 import { MenuItemProps } from '@/components/layout/header'
+import { name } from '@/lib/info'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -48,7 +49,7 @@ const Dropdown = ({ items, className, active }: DropdownProps): ReactElement => 
                 <ul>
                     {items.map((item: MenuItemProps, index: number) => (
                         <motion.li variants={listItem} key={index}>
-                            <Link href={item.path} aria-label={`Zach Donnelly ${item.title}`} role="link">
+                            <Link href={item.path} aria-label={`${name} ${item.title}`} role="link">
                                 {item.title}
                             </Link>
                         </motion.li>

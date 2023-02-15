@@ -9,7 +9,7 @@ module.exports = {
         'color-no-invalid-hex': true,
         'no-duplicate-at-import-rules': true,
         'no-duplicate-selectors': true,
-        'selector-max-universal': 0,
+        'selector-max-universal': 3,
         'at-rule-empty-line-before': [
             'always',
             {

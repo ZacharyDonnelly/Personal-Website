@@ -23,7 +23,8 @@
             "@/components/*": ["src/components/*"],
             "@/pages/*": ["src/pages/*"],
             "@/lib/*": ["src/lib/*"],
-            "@/styles/*": ["src/styles/*"]
+            "@/styles/*": ["src/styles/*"],
+            "@/assets/*": ["public/assets/*"]
         },
         "typeRoots": ["./node_modules/@types", "**/types"],
         "plugins": [

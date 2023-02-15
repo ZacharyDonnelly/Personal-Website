@@ -2,8 +2,8 @@ import debounce from 'lodash/debounce'
 import { useEffect, useState } from 'react'
 
 /**
- * Checks if window is currently fullscreen or mobile.
- * @returns {boolean} Returns boolean based on if window is mobile or fullscreen.
+ * Checks if window is currently desktop or mobile.
+ * @returns {boolean} Returns boolean based on if window is desktop or fullscreen.
  * */
 
 const useIsMobile = (): boolean => {
@@ -14,7 +14,6 @@ const useIsMobile = (): boolean => {
             setIsMobile(window.innerWidth < 768)
         }
         window.addEventListener('resize', debounce(updateSize, 250))
-        // updateSize();
         return (): void => window.removeEventListener('resize', updateSize)
     }, [])
 

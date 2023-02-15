@@ -1,4 +1,5 @@
 import Dropdown from '@/components/base/dropdown'
+import { logoDarkURL, logoURL, name } from '@/lib/info'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import cn from 'classnames'
 import Image from 'next/image'
@@ -17,8 +18,8 @@ const MenuItems: MenuItemProps[] = [
         path: '/about'
     },
     {
-        title: 'Portfolio',
-        path: '/portfolio'
+        title: 'Blog',
+        path: '/blog'
     },
     {
         title: 'Contact',
@@ -37,19 +38,18 @@ const Header: FC = (): ReactElement => {
     return (
         <>
             <header className={styles.header}>
-                <div className={styles.navContainer}>
+                <div
+                    className={cn(styles.navContainer, {
+                        [styles.noBorder]: isMobile || isMenuOpen
+                    })}
+                >
                     <Dropdown items={MenuItems} active={isMenuOpen} className={styles.navDropdown} />
                     <nav className={styles.logoContainer}>
-                        <Link href="/" aria-label="Zach Donnelly" role="link">
+                        <Link href="/" aria-label={name} role="link">
                             {!isMenuOpen ? (
-                                <Image src="/assets/icons/logo_gfx.png" height={78} width={90} alt="Zach Donnelly" />
+                                <Image src={logoURL} height={78} width={90} alt={name} />
                             ) : (
-                                <Image
-                                    src="/assets/icons/logo_gfx_black.png"
-                                    height={78}
-                                    width={90}
-                                    alt="Zach Donnelly"
-                                />
+                                <Image src={logoDarkURL} height={78} width={90} alt={name} />
                             )}
                         </Link>
                     </nav>
@@ -58,7 +58,7 @@ const Header: FC = (): ReactElement => {
                             <ul>
                                 {MenuItems.map((item, index) => (
                                     <li key={index}>
-                                        <Link href={item.path} aria-label={`Zach Donnelly ${item.title}`} role="link">
+                                        <Link href={item.path} aria-label={`${name} ${item.title}`} role="link">
                                             {item.title}
                                         </Link>
                                     </li>

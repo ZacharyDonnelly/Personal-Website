@@ -18,6 +18,11 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
+        border-bottom: 1px solid $accent-color-rgb;
+
+        &.noBorder {
+            border: none;
+        }
 
         @media screen and (max-width: $mobile-lg) {
             padding: 0 2rem 1rem;
