@@ -3,7 +3,7 @@
 module.exports = {
     extends: ['stylelint-config-prettier'],
     plugins: ['stylelint-scss', 'stylelint-prettier'],
-    customSyntax: 'postcss-scss',
+    customSyntax: require.resolve('postcss-scss'),
     rules: {
         'prettier/prettier': true,
         'color-no-invalid-hex': true,

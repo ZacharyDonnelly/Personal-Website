@@ -1,13 +1,14 @@
 @import '@/styles/vars.scss';
+@import '@/styles/mixins.scss';
 
 .header {
-    display: block;
+    display: flex;
     position: relative;
 
     .navContainer {
         width: 100%;
-        z-index: 100;
-        padding: 0.5rem 6rem 1.5rem;
+        z-index: 3;
+        padding: 0 6rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -42,6 +43,7 @@
             a {
                 vertical-align: middle;
                 padding-top: 0.5rem;
+                z-index: 5;
             }
         }
 
@@ -50,22 +52,15 @@
                 display: inherit;
 
                 > li {
-                    font-family: $main-font-family;
+                    @include list-item;
                     font-weight: 500;
                     font-size: 1.625rem;
                     border-radius: 1rem;
-                    transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
-                    will-change: transform;
                     margin: 0 0.375rem;
 
                     a {
                         padding: 1rem 1.5rem;
                         transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
-                    }
-
-                    &:hover {
-                        transform: translate(0px, 0.1rem);
-                        background-color: $nav-hover-color;
                     }
                 }
             }
@@ -85,10 +80,7 @@
                 background-color: transparent;
                 outline: none;
                 border: none;
-
-                &.open {
-                    background-color: $nav-hover-color;
-                }
+                z-index: 4;
 
                 &:hover {
                     transform: translate(0px, 0.1rem);
@@ -103,6 +95,11 @@
                     background-color: $accent-color-rgb;
                     border-radius: 0.875rem;
                     transition: 0.2s ease-in-out;
+
+                    &.activeTop,
+                    &.activeBottom {
+                        background-color: #000;
+                    }
                 }
 
                 .lineTop {
