@@ -10,7 +10,7 @@ const Home: React.FC = (): ReactElement => {
     const isMobile = useIsMobile()
     const width = 1920
     const height = 200
-    const src = 'https://res.cloudinary.com/dqs1n4hjy/image/upload/v1676521026/canvas_cloud.png'
+    const src = 'https://res.cloudinary.com/zacharydonnelly/image/upload/v1676530403/canvas_cloud.png'
 
     // TODO: Move to seperate file and refactor
     const drawCanvas = (ctx: CanvasRenderingContext2D | null) => {
@@ -71,6 +71,12 @@ const Home: React.FC = (): ReactElement => {
         <div className={styles.container}>
             <Head>
                 <title>Zach Donnelly</title>
+                <meta property="og:image" content={src} />
+                <meta property="og:image:width" content="1024" />
+                <meta property="og:image:height" content="608" />
+                <meta property="og:image:secure_url" content={src} />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:image" content={src} />
             </Head>
             <section className={styles.canvasContainer}>
                 {!isMobile && (
