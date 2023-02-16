@@ -12,13 +12,16 @@ const Canvas = ({ draw, width, height }: CanvasProps) => {
     const canvasCtxRef = useRef<CanvasRenderingContext2D | null>(null)
 
     useEffect(() => {
+        // if canvas is loaded
         if (canvasRef.current) {
             canvasCtxRef.current = canvasRef.current.getContext('2d')
             const ctx = canvasCtxRef.current
+
+            // start drawing (animation loop)
             draw(ctx)
         }
-        // const context = canvasRef?.current.getContext('2d')
     }, [draw])
+
     return <canvas ref={canvasRef} width={width} height={height} />
 }
 

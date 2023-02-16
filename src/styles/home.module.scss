@@ -1,33 +1,42 @@
 @import './vars.scss';
 
 .container {
-    /* padding: 6.75rem 11rem; */
     width: 100vw;
     height: 100vh;
     position: fixed;
     background: #252934;
+    display: flex;
+    flex-direction: column;
 
-    .inner {
-        height: calc(100vh + 53px);
-        /* margin-top: 1.5rem; */
-        /* height: 100%; */
+    .canvasContainer {
+        width: 100%;
+        height: 15rem;
 
         .canvas {
             height: 100%;
-            width: 100vw;
             position: absolute;
             top: 0;
             left: 0;
-            /* background: url('../../public/assets/images/background.png') center center/cover; */
 
-            .canvas {
-                height: 3840px;
-                width: 1026px;
+            canvas {
                 overflow-clip-margin: content-box;
                 overflow: clip;
             }
+        }
+    }
 
-            .header {
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2rem;
+
+        .content {
+            display: inherit;
+            flex-direction: column;
+
+            header {
+                color: white;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -45,13 +54,25 @@
                     font-family: $primary-font-family;
                 }
             }
-            .imgContainer {
-                height: 500px;
 
-                .avatar {
-                    border-radius: 20%;
-                }
+            @media screen and (min-width: $mobile-lg) {
+                flex-basis: 60%;
             }
+        }
+
+        .imgContainer {
+            display: inherit;
+            flex-basis: 40%;
+            color: white;
+            justify-content: flex-end;
+
+            .avatar {
+                border-radius: 50%;
+            }
+        }
+
+        @media screen and (min-width: $mobile-lg) {
+            padding: 0 12rem;
         }
     }
 }

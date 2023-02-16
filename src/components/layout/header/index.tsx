@@ -54,7 +54,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }: HeaderProps): ReactElement => {
                         </Link>
                     </nav>
                     <nav className={styles.linkContainer}>
-                        {!isMobile && !isMenuOpen && (
+                        {!isMobile && (
                             <ul>
                                 {MenuItems.map((item, index) => (
                                     <li key={index}>
