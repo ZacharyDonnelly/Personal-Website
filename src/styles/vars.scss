@@ -2,7 +2,10 @@
 $accent-color-hex: #ffaa66;
 $accent-color-rgb: rgb(255, 170, 102);
 
-$bg-color: #d7d2cb;
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-background: #252934;
 
 /* stylelint-disable-next-line function-no-unknown */
 $nav-hover-color: transparentize($accent-color-rgb, 0.75);

@@ -12,6 +12,7 @@ const Home: React.FC = (): ReactElement => {
     const height = 200
     const src = 'https://res.cloudinary.com/dqs1n4hjy/image/upload/v1676521026/canvas_cloud.png'
 
+    // TODO: Move to seperate file and refactor
     const drawCanvas = (ctx: CanvasRenderingContext2D | null) => {
         const image = new Image()
 
@@ -19,7 +20,8 @@ const Home: React.FC = (): ReactElement => {
         const startX = 1265 // starting x coordinate
         const startY = -410 // starting y coordinate
         const minX = -120 // minimum x coordinate
-        const minY = -210 // minimum y coordinate to match nav border
+        const maxY = -195 // minimum y coordinate to match nav border
+        const speed = 45 // animation loop speed (lower is faster)
         const end = startY + 50 // end of canvas - reset to start
 
         let x = startX // track/adjust x coordinate
@@ -41,7 +43,7 @@ const Home: React.FC = (): ReactElement => {
             x -= 4
 
             // make sure we are still off screen and lower sprite to position
-            if (y <= minY && x > minX) {
+            if (y <= maxY && x > minX) {
                 // move sprite down y axis
                 y += 4
             }
@@ -59,9 +61,10 @@ const Home: React.FC = (): ReactElement => {
                 }
             }
         }
+
         image.src = src
-        // run animation loop
-        setInterval(() => requestAnimationFrame(drawScreen), 45)
+        // Set refresh rate
+        image.onload = () => setInterval(() => requestAnimationFrame(drawScreen), speed)
     }
 
     return (
