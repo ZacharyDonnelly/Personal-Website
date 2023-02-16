@@ -1,11 +1,11 @@
 import { MenuItemProps } from '@/components/layout/header'
 import { name } from '@/lib/info'
 import { DropdownContext } from '@/lib/utils/context/DropdownContext'
+import styles from '@/styles/dropdown.module.scss'
 import cn from 'classnames'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Dispatch, ReactElement, SetStateAction, useContext } from 'react'
-import styles from './index.module.scss'
 
 interface DropdownProps {
     items: MenuItemProps[]

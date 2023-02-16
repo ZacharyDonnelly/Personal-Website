@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { FC } from 'react'
+import { ReactElement } from 'react'
 
-const Blog: FC = () => (
+const Blog: React.FC = (): ReactElement => (
     <>
         <Head>
             <title>Content by Zach Donnelly</title>

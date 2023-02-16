@@ -2,10 +2,15 @@
 $accent-color-hex: #ffaa66;
 $accent-color-rgb: rgb(255, 170, 102);
 
+$bg-color: #d7d2cb;
+
+/* stylelint-disable-next-line function-no-unknown */
 $nav-hover-color: transparentize($accent-color-rgb, 0.75);
 
 // ------ TYPOGRAPHY ------
-$main-font-family: Yellowtail;
+$primary-font-family: 'Libre Bodani', sans-serif;
+$secondary-font-family: 'Domine', serif;
+$yellowtail-font-family: 'Yellowtail', cursive;
 
 // ------ BREAKPOINTS ------
 $mobile-lg: 768px;

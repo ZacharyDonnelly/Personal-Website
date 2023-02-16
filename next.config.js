@@ -11,10 +11,6 @@ const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp']
     },
-    i18n: {
-        locales: ['en'],
-        defaultLocale: 'en'
-    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,

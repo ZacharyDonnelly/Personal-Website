@@ -1,11 +1,11 @@
 import Dropdown from '@/components/base/dropdown'
 import { logoDarkURL, logoURL, name } from '@/lib/info'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
+import styles from '@/styles/header.module.scss'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
-import styles from './index.module.scss'
 
 interface HeaderProps {
     isMenuOpen: boolean
@@ -45,7 +45,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }: HeaderProps): ReactElement => {
                 >
                     <Dropdown items={MenuItems} setIsMenuOpen={setIsMenuOpen} className={styles.navDropdown} />
                     <nav className={styles.logoContainer}>
-                        <Link href="/" aria-label={name} role="link">
+                        <Link href="/" aria-label={name} role="link" onClick={() => setIsMenuOpen(false)}>
                             {!isMenuOpen ? (
                                 <Image src={logoURL} height={78} width={90} alt={name} />
                             ) : (

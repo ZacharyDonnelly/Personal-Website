@@ -1,7 +1,7 @@
 @import './vars.scss';
 
 @mixin list-item {
-    font-family: $main-font-family;
+    font-family: $yellowtail-font-family;
     cursor: pointer;
     transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
     will-change: transform;

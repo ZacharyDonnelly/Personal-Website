@@ -50,9 +50,6 @@ module.exports = {
         // SCSS
         // ===
         'scss/at-import-no-partial-leading-underscore': null,
-        'scss/dollar-variable-colon-space-after': 'always',
-        'scss/dollar-variable-colon-space-before': 'never',
-        'scss/dollar-variable-pattern': '/^[a-z-]+$/',
         'scss/no-global-function-names': null,
         'scss/operator-no-newline-before': true,
         'scss/operator-no-unspaced': true
