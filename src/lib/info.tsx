@@ -6,4 +6,6 @@ const name = 'Zach Donnelly'
 const siteTitle = '- Software Engineer, React, Typescript, Javascript and UI/UX'
 const description = 'Zachary Donnelly Software Engineer'
 
-export { name, logoURL, logoDarkURL, avatar, description, siteTitle }
+const canvasSpriteSrc = 'https://res.cloudinary.com/zacharydonnelly/image/upload/v1676530403/canvas_cloud.png'
+
+export { name, logoURL, logoDarkURL, avatar, description, siteTitle, canvasSpriteSrc }

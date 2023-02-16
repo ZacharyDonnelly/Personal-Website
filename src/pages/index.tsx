@@ -1,5 +1,5 @@
 import Canvas from '@/components/base/canvas'
-import { avatar, name, siteTitle } from '@/lib/info'
+import { avatar, canvasSpriteSrc, name, siteTitle } from '@/lib/info'
 import CanvasAnimation from '@/lib/utils/animations/canvasAnimation'
 import HomePageTextAnimations from '@/lib/utils/animations/HomePageTextAnimations'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
@@ -13,11 +13,9 @@ const Home: React.FC = (): ReactElement => {
     const isMobile = useIsMobile()
     const textAnimations = new HomePageTextAnimations()
 
-    const src = 'https://res.cloudinary.com/zacharydonnelly/image/upload/v1676530403/canvas_cloud.png'
-
     const drawCanvas = (ctx: CanvasRenderingContext2D) => {
         const image = new Image()
-        image.src = src
+        image.src = canvasSpriteSrc
 
         const animation = new CanvasAnimation(ctx, image, 45)
 
@@ -27,13 +25,13 @@ const Home: React.FC = (): ReactElement => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>{name + siteTitle}</title>
-                <meta property="og:image" content={src} />
+                <title>{`${name} ${siteTitle}`}</title>
+                <meta property="og:image" content={canvasSpriteSrc} />
                 <meta property="og:image:width" content="1024" />
                 <meta property="og:image:height" content="608" />
-                <meta property="og:image:secure_url" content={src} />
+                <meta property="og:image:secure_url" content={canvasSpriteSrc} />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:image" content={src} />
+                <meta property="twitter:image" content={canvasSpriteSrc} />
                 <meta name="application-name" content="zachdonnelly.com" />
                 <meta property="author" content={name} />
             </Head>
