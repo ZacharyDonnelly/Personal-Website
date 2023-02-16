@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 interface CanvasProps {
-    draw: (ctx: CanvasRenderingContext2D | null) => void
+    draw: (ctx: CanvasRenderingContext2D) => void
     height: number
     width: number
     className: string
@@ -15,10 +15,10 @@ const Canvas = ({ draw, width, height }: CanvasProps) => {
         // if canvas is loaded
         if (canvasRef.current) {
             canvasCtxRef.current = canvasRef.current.getContext('2d')
-            const ctx = canvasCtxRef.current
 
-            // start drawing (animation loop)
-            draw(ctx)
+            if (canvasCtxRef.current) {
+                draw(canvasCtxRef.current)
+            }
         }
     }, [draw])
 
