@@ -76,17 +76,15 @@
                 padding: 1.125rem 1.25rem;
                 margin-top: 0.225rem;
                 display: flex;
-                align-items: stretch;
                 justify-content: center;
                 flex-direction: column;
                 border-radius: 1.125rem;
                 transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
                 cursor: pointer;
-                vertical-align: middle;
                 background-color: transparent;
-                outline: none;
                 border: none;
                 z-index: 4;
+                user-select: none;
 
                 &:hover {
                     transform: translate(0px, 0.1rem);
@@ -104,7 +102,7 @@
                     height: 0.25rem;
                     background-color: $accent-color-rgb;
                     border-radius: 0.875rem;
-                    transition: 0.2s ease-in-out;
+                    transition: 0.25s ease;
 
                     &.activeTop,
                     &.activeBottom {

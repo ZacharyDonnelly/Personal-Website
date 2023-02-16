@@ -72,12 +72,12 @@ const Header = ({ isMenuOpen, setIsMenuOpen }: HeaderProps): ReactElement => {
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             aria-label="Menu"
                         >
-                            <div
+                            <i
                                 className={cn(styles.lineTop, {
                                     [styles.activeTop]: isMenuOpen
                                 })}
                             />
-                            <div
+                            <i
                                 className={cn(styles.lineBottom, {
                                     [styles.activeBottom]: isMenuOpen
                                 })}

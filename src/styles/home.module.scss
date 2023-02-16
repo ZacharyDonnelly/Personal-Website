@@ -21,6 +21,7 @@
             canvas {
                 overflow-clip-margin: content-box;
                 overflow: clip;
+                image-rendering: -webkit-optimize-contrast;
             }
         }
     }

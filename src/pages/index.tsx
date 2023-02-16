@@ -1,16 +1,34 @@
 import Canvas from '@/components/base/canvas'
-import { avatar, name } from '@/lib/info'
+import { avatar, name, siteTitle } from '@/lib/info'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import styles from '@/styles/home.module.scss'
+import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { default as NextImage } from 'next/image'
 import { ReactElement } from 'react'
 
 const Home: React.FC = (): ReactElement => {
     const isMobile = useIsMobile()
+
+    const mainHeading = `Hello, my name is ${name}.`.split('').map((word) => (word += '\u00A0'))
     const width = 1920
     const height = 200
     const src = 'https://res.cloudinary.com/zacharydonnelly/image/upload/v1676530403/canvas_cloud.png'
+
+    const container = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05
+            }
+        }
+    }
+
+    const heading = {
+        hidden: { opacity: 0 },
+        show: { opacity: 1 }
+    }
 
     // TODO: Move to seperate file and refactor
     const drawCanvas = (ctx: CanvasRenderingContext2D | null) => {
@@ -20,7 +38,7 @@ const Home: React.FC = (): ReactElement => {
         const startX = 1265 // starting x coordinate
         const startY = -410 // starting y coordinate
         const minX = -120 // minimum x coordinate
-        const maxY = -195 // minimum y coordinate to match nav border
+        const maxY = -190 // minimum y coordinate to match nav border
         const speed = 45 // animation loop speed (lower is faster)
         const end = startY + 50 // end of canvas - reset to start
 
@@ -70,13 +88,15 @@ const Home: React.FC = (): ReactElement => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Zach Donnelly</title>
+                <title>{name + siteTitle}</title>
                 <meta property="og:image" content={src} />
                 <meta property="og:image:width" content="1024" />
                 <meta property="og:image:height" content="608" />
                 <meta property="og:image:secure_url" content={src} />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:image" content={src} />
+                <meta name="application-name" content="zachdonnelly.com" />
+                <meta property="author" content={name} />
             </Head>
             <section className={styles.canvasContainer}>
                 {!isMobile && (
@@ -88,8 +108,15 @@ const Home: React.FC = (): ReactElement => {
             <section className={styles.hero}>
                 <div className={styles.content}>
                     <header>
-                        <h2>Hi there! 👋 I&apos;m</h2>
-                        <h1>Zach</h1>
+                        <h3>
+                            <motion.span variants={container} initial="hidden" animate="show">
+                                {mainHeading.map((char, i: number) => (
+                                    <motion.span key={i} aria-hidden="true" variants={heading}>
+                                        {char}
+                                    </motion.span>
+                                ))}
+                            </motion.span>
+                        </h3>
                     </header>
                 </div>
                 <div className={styles.imgContainer}>
