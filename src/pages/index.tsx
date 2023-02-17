@@ -1,12 +1,11 @@
 import Canvas from '@/components/base/canvas'
-import { avatar, canvasSpriteSrc, name, siteTitle } from '@/lib/info'
+import { canvasSpriteSrc, name, siteTitle } from '@/lib/info'
 import CanvasAnimation from '@/lib/utils/animations/canvasAnimation'
 import HomePageTextAnimations from '@/lib/utils/animations/HomePageTextAnimations'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import styles from '@/styles/home.module.scss'
 import { motion } from 'framer-motion'
 import Head from 'next/head'
-import { default as NextImage } from 'next/image'
 import { ReactElement } from 'react'
 
 const Home: React.FC = (): ReactElement => {
@@ -17,9 +16,9 @@ const Home: React.FC = (): ReactElement => {
         const image = new Image()
         image.src = canvasSpriteSrc
 
-        const animation = new CanvasAnimation(ctx, image, 45)
+        const animation: CanvasAnimation = new CanvasAnimation(ctx, image)
 
-        image.onload = () => setInterval(() => animation.drawScreen(), animation.speed)
+        image.onload = () => setInterval(() => animation.drawScreen(), 45)
     }
 
     return (
@@ -55,9 +54,6 @@ const Home: React.FC = (): ReactElement => {
                             </motion.span>
                         </h3>
                     </header>
-                </div>
-                <div className={styles.imgContainer}>
-                    <NextImage className={styles.avatar} src={avatar} height={500} width={600} alt={name} priority />
                 </div>
             </section>
         </div>

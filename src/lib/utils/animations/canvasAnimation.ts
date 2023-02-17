@@ -1,24 +1,19 @@
 class CanvasAnimation {
-    x: number
-    y: number
-    // static image: HTMLImageElement = new Image()
+    private ctx: CanvasRenderingContext2D // canvas context
+    private image: HTMLImageElement // canvas image
 
-    startX = 1265 // starting x coordinate
-    startY = -410 // starting y coordinate
-    minX = -120 // minimum x coordinate
-    maxY = -190 // minimum y coordinate to match nav border
-    end = -360 // end of canvas - reset to start
-    speed: number // animation loop speed (lower is faster)
-    ctx: CanvasRenderingContext2D
-    image: HTMLImageElement
+    protected startX = 1200 // starting x coordinate
+    protected startY = -410 // starting y coordinate
+    protected minX = -120 // minimum x coordinate
+    protected minY = -190 // minimum y coordinate to match nav border
+    protected end = -360 // end of canvas - reset to start
 
-    constructor(ctx: CanvasRenderingContext2D, image: HTMLImageElement, speed: number) {
+    private x: number = this.startX // set x to initial x coordinate on beginning of animation
+    private y: number = this.startY // set y to initial y coordinate on beginning of animation
+
+    constructor(ctx: CanvasRenderingContext2D, image: HTMLImageElement) {
         this.ctx = ctx
         this.image = image
-
-        this.x = this.startX
-        this.y = this.startY
-        this.speed = speed
     }
 
     /**
@@ -28,16 +23,16 @@ class CanvasAnimation {
      * @returns {FrameRequestCallback} Only animates sprite
      */
     public drawScreen(): FrameRequestCallback {
-        this.ctx.save() // save current canvas state
-        this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height) // clear canvas
-        this.ctx.drawImage(this.image, this.x, this.y) // draw image at current position
-        this.ctx.restore() // restore previous canvas state
+        this?.ctx.save() // save current canvas state
+        this?.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height) // clear canvas
+        this?.ctx.drawImage(this.image, this.x, this.y) // draw image at current position
+        this?.ctx.restore() // restore previous canvas state
 
         // move sprite along x axis
         this.x -= 4
 
         // make sure we are still off screen and lower sprite to position
-        if (this.y <= this.maxY && this.x > this.minX) {
+        if (this.y <= this.minY && this.x > this.minX) {
             // move sprite down y axis
             this.y += 4
         }
@@ -47,7 +42,7 @@ class CanvasAnimation {
             // move sprite up y axis
             this.y -= 2
 
-            // reset sprite position
+            // reset sprite position to start of canvas
             if (this.y <= this.end) {
                 // reset x,y coordinates
                 this.x = this.startX

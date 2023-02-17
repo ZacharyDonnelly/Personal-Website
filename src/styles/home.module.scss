@@ -61,17 +61,6 @@
             }
         }
 
-        .imgContainer {
-            display: inherit;
-            flex-basis: 40%;
-            color: white;
-            justify-content: flex-end;
-
-            .avatar {
-                border-radius: 50%;
-            }
-        }
-
         @media screen and (min-width: $mobile-lg) {
             padding: 0 12rem;
         }

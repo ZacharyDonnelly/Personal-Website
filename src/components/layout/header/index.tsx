@@ -47,7 +47,7 @@ const Header = ({ isMenuOpen, setIsMenuOpen }: HeaderProps): ReactElement => {
                     <nav className={styles.logoContainer}>
                         <Link href="/" aria-label={name} role="link" onClick={() => setIsMenuOpen(false)}>
                             {!isMenuOpen ? (
-                                <Image src={logoURL} height={78} width={90} alt={name} />
+                                <Image src={logoURL} height={78} width={90} alt={name} priority />
                             ) : (
                                 <Image src={logoDarkURL} height={78} width={90} alt={name} />
                             )}

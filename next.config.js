@@ -9,7 +9,7 @@ const nextConfig = {
         includePaths: [path.join(__dirname, 'styles')]
     },
     images: {
-        formats: ['image/avif', 'image/webp', 'image/png', 'image/jpg'],
+        formats: ['image/avif', 'image/webp'],
         domains: ['res.cloudinary.com']
     },
     webpack(config) {
