@@ -1,108 +1,108 @@
 {
-    "name": "personal-site",
-    "version": "1.0.0",
-    "private": true,
-    "author": "Zachary Donnelly",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/ZacharyDonnelly/Personal-Website.git"
-    },
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "format": "prettier --write .",
-        "lint": "next lint",
-        "lint:eslint": "eslint --fix --ignore-path .gitignore --ext  **/*.ts, **/*.tsx",
-        "lint:md": "./tools/check-md.sh && markdownlint --fix './**/*.md'",
-        "lint:prettier": "prettier --write \"**/*.{css,scss}\"",
-        "lint:stylelint": "stylelint --fix --config ./.stylelint.config.js \"**/*.{css,scss}\"",
-        "lint:yaml": "pnpm prettier --write './**/*.{yaml,yml}'",
-        "clean": "rm -rf ./node_modules && rm -rf ./.next"
-    },
-    "dependencies": {
-        "@next/env": "^13.1.6",
-        "@next/font": "13.1.6",
-        "framer-motion": "^9.0.4",
-        "lodash": "^4.17.21",
-        "next": "13.1.6",
-        "next-contentlayer": "^0.3.0",
-        "react": "^18.2.0",
-        "react-dom": "18.2.0",
-        "react-intersection-observer": "^9.4.2",
-        "sharp": "^0.31.3"
-    },
-    "devDependencies": {
-        "@commitlint/cli": "^17.4.3",
-        "@commitlint/config-conventional": "^17.4.3",
-        "@next/eslint-plugin-next": "^13.1.6",
-        "@svgr/webpack": "^6.5.1",
-        "@testing-library/dom": "^8.20.0",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/react-hooks": "^8.0.1",
-        "@types/jest": "^29.4.0",
-        "@types/lodash": "^4.14.191",
-        "@types/node": "18.13.0",
-        "@types/react": "^18.0.28",
-        "@types/react-dom": "18.0.10",
-        "@types/testing-library__jest-dom": "^5.14.5",
-        "@typescript-eslint/eslint-plugin": "^5.52.0",
-        "@typescript-eslint/parser": "^5.52.0",
-        "autoprefixer": "^10.4.13",
-        "classnames": "^2.3.2",
-        "eslint": "8.33.0",
-        "eslint-config-next": "13.1.6",
-        "eslint-config-prettier": "^8.6.0",
-        "eslint-plugin-jest": "^27.2.1",
-        "eslint-plugin-jest-dom": "^4.0.3",
-        "eslint-plugin-jsx-a11y": "^6.7.1",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-testing-library": "^5.10.2",
-        "husky": "^8.0.3",
-        "jest": "^29.4.3",
-        "jest-environment-jsdom": "^29.4.3",
-        "lint-staged": "^13.1.2",
-        "markdownlint-cli": "^0.33.0",
-        "next-sitemap": "^3.1.52",
-        "normalize.css": "^8.0.1",
-        "postcss": "^8.4.21",
-        "postcss-scss": "^4.0.6",
-        "prettier": "^2.8.4",
-        "prettier-plugin-organize-imports": "^3.2.2",
-        "remark": "^14.0.2",
-        "remark-cli": "^11.0.0",
-        "sass": "^1.58.2",
-        "scriptlint": "^2.2.0",
-        "stylelint": "^15.1.0",
-        "stylelint-config-prettier": "^9.0.5",
-        "stylelint-prettier": "^2.0.0",
-        "stylelint-scss": "^4.4.0",
-        "ts-node": "^10.9.1",
-        "tslib": "^2.5.0",
-        "typescript": "^4.9.5"
-    },
-    "scriptlint": {
-        "rules": {
-            "uses-allowed-namespace": false
-        }
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version",
-            "last 1 ie version"
-        ]
-    },
-    "engines": {
-        "node": ">=16.10.0",
-        "pnpm": ">=7.25.0"
+  "name": "personal-site",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Zachary Donnelly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ZacharyDonnelly/Personal-Website.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write .",
+    "lint": "next lint",
+    "lint:eslint": "eslint --fix --cache --cache-strategy metadata --ext  .ts,.tsx src/",
+    "lint:md": "./tools/check-md.sh && markdownlint --fix './**/*.md'",
+    "lint:prettier": "prettier --write --cache --cache-strategy metadata \"**/*.{css,scss}\"",
+    "lint:stylelint": "pnpm stylelint --config='./.stylelintrc.json' --fix --cache \"**/*.{css,scss,module.scss}\"",
+    "lint:yaml": "prettier --write './**/*.{yaml,yml}'",
+    "clean": "rm -rf ./node_modules && rm -rf ./.next"
+  },
+  "dependencies": {
+    "@next/env": "^13.1.6",
+    "@next/font": "13.1.6",
+    "framer-motion": "^9.0.4",
+    "lodash": "^4.17.21",
+    "next": "13.1.6",
+    "next-contentlayer": "^0.3.0",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-intersection-observer": "^9.4.2",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.3",
+    "@commitlint/config-conventional": "^17.4.3",
+    "@next/eslint-plugin-next": "^13.1.6",
+    "@svgr/webpack": "^6.5.1",
+    "@testing-library/dom": "^8.20.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.4.0",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "18.13.0",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "18.0.10",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "autoprefixer": "^10.4.13",
+    "classnames": "^2.3.2",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-jest-dom": "^4.0.3",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.10.2",
+    "husky": "^8.0.3",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.3",
+    "lint-staged": "^13.1.2",
+    "markdownlint-cli": "^0.33.0",
+    "next-sitemap": "^3.1.52",
+    "normalize.css": "^8.0.1",
+    "postcss": "^8.4.21",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.8.4",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "remark": "^14.0.2",
+    "remark-cli": "^11.0.0",
+    "sass": "^1.58.2",
+    "scriptlint": "^2.2.0",
+    "stylelint": "^15.1.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "stylelint-scss": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  },
+  "scriptlint": {
+    "rules": {
+      "uses-allowed-namespace": false
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 ie version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.10.0",
+    "pnpm": ">=7.25.0"
+  }
 }

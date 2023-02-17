@@ -1,9 +1,9 @@
 'use strict'
 
 const plugins = {
-    autoprefixer: {}
+  autoprefixer: {}
 }
 
 module.exports = {
-    plugins
+  plugins
 }

@@ -1,49 +1,49 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "importHelpers": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "incremental": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "baseUrl": ".",
-        "paths": {
-            "@/components/*": ["src/components/*"],
-            "@/pages/*": ["src/pages/*"],
-            "@/lib/*": ["src/lib/*"],
-            "@/styles/*": ["src/styles/*"],
-            "@/assets/*": ["public/assets/*"]
-        },
-        "typeRoots": ["./node_modules/@types", "**/types"],
-        "plugins": [
-            {
-                "name": "next"
-            }
-        ]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/assets/*": ["public/assets/*"]
     },
-    "include": [
-        "next-env.d.ts",
-        "src/**/*.module.scss",
-        "src/**/*.ts",
-        "src/**/*.tsx",
-        ".next/types/**/*.ts"
-    ],
-    "exclude": ["node_modules", "dist"],
-    "ts-node": {
-        "compilerOptions": {
-            "module": "commonjs"
-        }
+    "typeRoots": ["./node_modules/@types", "**/types"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.module.scss",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
     }
+  }
 }
