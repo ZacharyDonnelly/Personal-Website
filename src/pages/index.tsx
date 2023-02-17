@@ -1,7 +1,6 @@
 import Canvas from '@/components/base/canvas'
 import { canvasSpriteSrc, name, siteTitle } from '@/lib/info'
 import CanvasAnimation from '@/lib/utils/animations/canvasAnimation'
-import HomePageTextAnimations from '@/lib/utils/animations/HomePageTextAnimations'
 import useIsMobile from '@/lib/utils/hooks/useIsMobile'
 import styles from '@/styles/home.module.scss'
 import Head from 'next/head'
@@ -9,7 +8,7 @@ import { ReactElement } from 'react'
 
 const Home: React.FC = (): ReactElement => {
   const isMobile = useIsMobile()
-  const textAnimations = new HomePageTextAnimations()
+  // const textAnimations = new HomePageTextAnimations()
 
   const drawCanvas = (ctx: CanvasRenderingContext2D) => {
     const image = new Image()

@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
   'src/**/*.{css,scss}': ['pnpm lint:stylelint'],
   'src/**/*.{tsx,ts}': ['pnpm lint:prettier', 'pnpm lint:eslint'],
