@@ -2,11 +2,11 @@
   "version": "1.0.0",
   "tasks": [
     {
-      "type": "npm",
+      "type": "pnpm",
       "script": "dev",
       "problemMatcher": [],
-      "label": "npm run dev",
-      "detail": "next dev"
+      "label": "pnpm dev",
+      "detail": "pnpm dev"
     }
   ]
 }
