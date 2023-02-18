@@ -1,21 +1,21 @@
-import { name } from "@/lib/info";
-import { Variants } from "framer-motion";
+import { Variants } from 'framer-motion'
+import { name } from '~/lib/info'
 
-type Hidden = { opacity: number };
+type Hidden = { opacity: number }
 
-type Show = { opacity: number; transition?: { staggerChildren: number } };
+type Show = { opacity: number; transition?: { staggerChildren: number } }
 
 interface AnimationProps extends Variants {
-  hidden: Hidden;
-  show: Show;
+  hidden: Hidden
+  show: Show
 }
 
 class HomePageTextAnimations {
-  container: AnimationProps;
+  container: AnimationProps
 
-  heading: AnimationProps;
+  heading: AnimationProps
 
-  mainHeading: string[];
+  mainHeading: string[]
 
   constructor() {
     this.container = {
@@ -23,20 +23,18 @@ class HomePageTextAnimations {
       show: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.05,
-        },
-      },
-    };
+          staggerChildren: 0.05
+        }
+      }
+    }
 
     this.heading = {
       hidden: { opacity: 0 },
-      show: { opacity: 1 },
-    };
+      show: { opacity: 1 }
+    }
 
-    this.mainHeading = `Hello, my name is ${name}.`
-      .split("")
-      .map((word) => (word += "\u00A0"));
+    this.mainHeading = `Hello, my name is ${name}.`.split('').map(word => (word += '\u00A0'))
   }
 }
 
-export default HomePageTextAnimations;
+export default HomePageTextAnimations
