@@ -32,7 +32,7 @@ jobs:
           useLockFile: false
 
       - name: 🔬 Lint
-        run: npm run lint
+        run: npm run lint-staged
 
   typecheck:
     name: ʦ TypeScript
