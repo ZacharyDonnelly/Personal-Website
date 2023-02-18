@@ -1,0 +1,18 @@
+{
+  "files.insertFinalNewline": false,
+  "files.trimTrailingWhitespace": true,
+  "typescript.tsdk": "../node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "emmet.includeLanguages": {
+    "postcss": "scss"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "scss"
+  },
+  "files.associations": {
+    "*.scss": "postcss"
+  }
+}

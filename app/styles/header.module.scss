@@ -1,0 +1,142 @@
+@import './vars';
+@import './mixins';
+
+.header {
+  display: flex;
+  position: relative;
+
+  .navContainer {
+    width: 100%;
+    z-index: 3;
+    padding: 0 6rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    border-bottom: 1px solid $accent-color-rgb;
+
+    &.noBorder {
+      border: none;
+    }
+
+    @media screen and (max-width: $mobile-lg) {
+      padding: 0 2rem 1rem;
+    }
+
+    > nav {
+      pointer-events: all;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: $accent-color-rgb;
+
+      @media screen and (max-width: $mobile-lg) {
+        justify-content: space-between;
+      }
+    }
+
+    .logoContainer {
+      align-items: center;
+      height: 4.875rem;
+      width: 5.625rem;
+
+      a {
+        vertical-align: middle;
+        padding-top: 0.5rem;
+        z-index: 5;
+      }
+    }
+
+    .linkContainer {
+      ul {
+        display: inherit;
+
+        > li {
+          @include list-item;
+
+          will-change: transform;
+          font-weight: 500;
+          font-size: 1.625rem;
+          border-radius: 1rem;
+          margin: 0 0.375rem;
+
+          a {
+            padding: 1rem 1.5rem;
+            transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+      }
+
+      .hamburger {
+        height: 3.5rem;
+        padding: 1.125rem 1.25rem;
+        margin-top: 0.225rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 1.125rem;
+        transition: all 375ms cubic-bezier(0.215, 0.61, 0.355, 1);
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        z-index: 4;
+        user-select: none;
+
+        &:hover {
+          transform: translate(0, 0.1rem);
+          background-color: $nav-hover-color;
+        }
+
+        &.open {
+          background-color: transparent;
+        }
+
+        .lineTop,
+        .lineBottom {
+          will-change: transform;
+          width: 1.75rem;
+          height: 0.25rem;
+          background-color: $accent-color-rgb;
+          border-radius: 0.875rem;
+          transition: 0.25s ease;
+
+          &.activeTop,
+          &.activeBottom {
+            background-color: $color-black;
+          }
+        }
+
+        .lineTop {
+          margin-bottom: 0.25rem;
+
+          &.activeTop {
+            transform: translate3d(0, 0.31rem, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg)
+              skew(0deg, 0deg);
+            transform-style: preserve-3d;
+          }
+        }
+
+        .lineBottom {
+          margin-top: 0.25rem;
+
+          &.activeBottom {
+            transform: translate3d(0, -0.425rem, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-45deg)
+              skew(0deg, 0deg);
+            transform-style: preserve-3d;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navContainer {
+    max-width: 80%;
+  }
+}
